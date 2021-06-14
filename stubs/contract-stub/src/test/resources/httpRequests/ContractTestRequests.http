@@ -1,0 +1,17 @@
+### Test request for consumer contract
+GET http://localhost:8080/consumer/products/ICE
+Accept: application/json
+
+
+### Test request for provider contract
+POST http://localhost:8080/provider/products/ICEMONGO
+Accept: application/json
+Content-Type: application/json
+
+{
+  "consumerId": "Api Test from Consumer"
+}
+
+
+
+

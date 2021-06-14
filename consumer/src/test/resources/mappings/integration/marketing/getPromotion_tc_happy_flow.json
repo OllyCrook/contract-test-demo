@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/marketing/promotion/ICE",
+    "headers": {
+      "x-b3-traceId": {
+        "matches": "([A-Za-z0-9]{16})"
+      },
+      "test-case": {
+        "matches": "tc_happy_flow"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "integration/marketing/getPromotionDetails_{{ request.headers.test-case }}.json",
+    "transformers": ["response-template"]
+  }
+}

@@ -1,0 +1,20 @@
+server.port: 8081
+
+logging:
+  level:
+    root: debug
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+# the following property names are generated from the title of provider.yml and marketing.yml
+providerService:
+  url: http://localhost:8082
+
+marketingService:
+  url: http://localhost:8082

@@ -1,0 +1,12 @@
+description: yaml contract
+request:
+    method: POST
+    url: /provider/products/MOCKED_CONTRACT_YAML
+    headers:
+        Content-Type: application/json
+    bodyFromFile: request/getProducts_MOCKED_CONTRACT_YAML.json
+response:
+    status: 200
+    headers:
+        Content-Type: application/json
+    bodyFromFile: response/getProducts_MOCKED_CONTRACT_YAML.json

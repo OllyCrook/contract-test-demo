@@ -1,0 +1,48 @@
+openapi: 3.0.2
+info:
+  title: "Marketing service"
+  description: "OpenApi definition for the marketing service"
+  version: 1.0.0
+  contact:
+    name: Feature teams
+    email: oliver.crook@rabobank.nl
+servers:
+  - url: https://provider-marketing-test.apps.pcf-t02-we.rabobank.nl
+    description: "Test url"
+
+tags:
+  - name: marketing
+    description: "Marketing controller"
+paths:
+  /marketing/promotion/{productCode}:
+    get:
+      tags:
+        - marketing
+      operationId: getPromotionDetails
+      parameters:
+        - name: productCode
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^\w{1,35}$'
+      responses:
+        200:
+          description: Successfully retrieved search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromotionDetails'
+        400:
+          description: "Bad request"
+        500:
+          description: "Server error"
+components:
+  schemas:
+    PromotionDetails:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string

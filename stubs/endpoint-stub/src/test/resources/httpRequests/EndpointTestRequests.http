@@ -1,0 +1,19 @@
+### Test request for the provider service that is used by the consumer
+POST http://localhost:8080//provider/products/ICE
+Accept: application/json
+x-b3-traceId: 1234567890123456
+
+### Test request for the marketing service that is used by the consumer
+GET http://localhost:8080/marketing/promotion/ICE
+Accept: application/json
+x-b3-traceId: 1234567890123456
+
+### Example, calling WireMock fiel for test case tc_happy_flow
+GET http://localhost:8080/marketing/promotion/ICE
+Accept: application/json
+x-b3-traceId: 1234567890123456
+test-case: tc_happy_flow
+
+
+
+

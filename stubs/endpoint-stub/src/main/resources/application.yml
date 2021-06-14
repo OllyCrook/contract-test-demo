@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+logging:
+  level:
+    root: info
+
+spring:
+  main:
+    web-application-type: none
+
+wiremock:
+  server:
+    stubs: classpath*:/**/mappings/**/*.json
+    files: classpath:/stubs
+
+
+

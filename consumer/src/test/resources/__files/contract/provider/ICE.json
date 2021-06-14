@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "category": "ICE",
+      "code": "STRAWBERRY",
+      "name": "Strawberry ice cream",
+      "description": "The best strawberry ice cream in the world",
+      "price": "1234"
+    }
+  ]
+}

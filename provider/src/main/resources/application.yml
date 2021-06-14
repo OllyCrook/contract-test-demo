@@ -1,0 +1,17 @@
+server.port: 8082
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+  cache:
+    type: none
+
+mongodb:
+  ttl: 86400
+  quoteTtl: 604800
+  collection-name: local

@@ -1,0 +1,25 @@
+logging:
+  level:
+    root: info
+  pattern:
+    level: '[%X{testCase}/%X{traceId} %-5p [%t] %C{2} - %m%n'
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+  cache:
+    type: none
+
+mongodb:
+  ttl: 86400
+  quoteTtl: 604800
+  collection-name: local

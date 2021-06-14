@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "category": "ICEMONGO",
+      "code": "CONTRACT-STRAWBERRY",
+      "name": "Strawberry ice cream",
+      "price": "23"
+    },
+    {
+      "category": "ICEMONGO",
+      "code": "CONTRACT-CHOCOLATE",
+      "name": "Chocolate ice cream",
+      "price": "99"
+    }
+  ]
+}

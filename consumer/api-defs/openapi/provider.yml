@@ -1,0 +1,106 @@
+openapi: 3.0.2
+info:
+  title: "Provider service"
+  description: "OpenApi definition for the provider service"
+  version: 1.0.0
+  contact:
+    name: Feature teams
+    email: oliver.crook@rabobank.nl
+servers:
+  - url: https://provider-service-test.apps.pcf-t02-we.rabobank.nl
+    description: "Test url"
+
+tags:
+  - name: provider
+    description: "Provider controller"
+paths:
+  /provider/products/{productCategory}:
+    post:
+      tags:
+        - provider
+      operationId: getProducts
+      parameters:
+        - name: productCategory
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^\w{1,35}$'
+      # This request body is only added for demonstrating some contract based testing tricks
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ConsumerDetails"
+      responses:
+        200:
+          description: Successfully retrieved search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products'
+        400:
+          description: "Bad request"
+        500:
+          description: "Server error"
+  /provider/productDetails/{productCode}:
+    get:
+      tags:
+        - provider
+      operationId: getProductDetails
+      parameters:
+        - name: productCode
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^\w{1,35}$'
+      responses:
+        200:
+          description: Successfully retrieved search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        400:
+          description: "Bad request"
+        500:
+          description: "Server error"
+components:
+  schemas:
+    Products:
+      type: object
+      properties:
+        products:
+          type: object
+          description: "A list of products and their prices"
+          items:
+            $ref: '#/components/schemas/Product'
+    Product:
+      type: object
+      description: 'Details of the product'
+      properties:
+        category:
+          type: string
+          description: 'The product category.  For example, "ICE"'
+        code:
+          type: string
+          description: 'The product code, for example STRAWBERRY'
+        name:
+          type: string
+          description: 'The product name'
+        description:
+          type: string
+          description: 'The product description'
+        price:
+          type: string
+          description: 'The product price'
+    ConsumerDetails:
+      type: object
+      description: 'Details of the product'
+      properties:
+        consumerId:
+          type: string
+          description: 'The id of the consumer app'
+

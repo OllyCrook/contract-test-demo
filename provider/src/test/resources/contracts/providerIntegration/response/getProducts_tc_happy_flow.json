@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "category": "ICE",
+      "code": "CONTRACT-STRAWBERRY",
+      "name": "Strawberry ice cream",
+      "price": "23"
+    }
+  ]
+}

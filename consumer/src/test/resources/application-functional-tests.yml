@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: info
+  pattern:
+    level: '[%X{testCase}/%X{traceId} %-5p [%t] %C{2} - %m%n'
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+providerService:
+  url: http://localhost:${wiremock.server.port}
+
+marketingService:
+  url: http://localhost:${wiremock.server.port}

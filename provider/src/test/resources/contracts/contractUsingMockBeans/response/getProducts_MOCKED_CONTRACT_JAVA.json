@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "category": "MOCKED_CONTRACT_JAVA",
+      "code": "CONTRACT-MOCK",
+      "name": "Tasty mock surprise",
+      "description": "This is the product description. It should not have been filled by the mock bean",
+      "price": "23"
+    }
+  ]
+}

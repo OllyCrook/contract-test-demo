@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/marketing/promotion/ICE",
+    "headers": {
+      "x-b3-traceId": {
+        "matches": "([A-Za-z0-9]{16})"
+      },
+      "test-case": {
+        "absent": true
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "contract/marketing/ICE.json"
+  }
+}
