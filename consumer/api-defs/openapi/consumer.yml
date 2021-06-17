@@ -14,13 +14,13 @@ tags:
   - name: consumer
     description: "Consumer controller"
 paths:
-  /consumer/products/{productCode}:
+  /consumer/products/{productCategory}:
     get:
       tags:
         - consumer
       operationId: getProductList
       parameters:
-        - name: productCode
+        - name: productCategory
           in: path
           required: true
           schema:
@@ -48,14 +48,14 @@ components:
           description: "A list of products and their prices"
           items:
             $ref: '#/components/schemas/ProductPrice'
+        promotionDetails:
+          type: string
+          description: "details of any promotion"
     ProductPrice:
       type: object
       description: 'Details of the product'
       properties:
         code:
-          type: string
-          description: 'The product code'
-        id:
           type: string
           description: 'The product code'
         name:

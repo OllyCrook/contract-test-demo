@@ -12,7 +12,7 @@
     <groupId>nl.crook.olly.contract.demo.stub</groupId>
     <artifactId>endpoint-stub</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>contract-stub-service</name>
+    <name>endpoint-stub-service</name>
 
     <properties>
         <java.version>11</java.version>

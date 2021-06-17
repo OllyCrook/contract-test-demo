@@ -1,8 +1,9 @@
 logging:
   level:
     root: warn
+    nl.crook.olly: info
   pattern:
-    level: '[%X{testCase}/%X{traceId} %-5p [%t] %C{2} - %m%n'
+    level: '%-5p [%X{test-case}] [%t] %C{2} - %m%n'
 
 feign:
   client:

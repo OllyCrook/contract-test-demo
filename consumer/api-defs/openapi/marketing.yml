@@ -14,13 +14,13 @@ tags:
   - name: marketing
     description: "Marketing controller"
 paths:
-  /marketing/promotion/{productCode}:
+  /marketing/promotion/{productCategory}:
     get:
       tags:
         - marketing
       operationId: getPromotionDetails
       parameters:
-        - name: productCode
+        - name: productCategory
           in: path
           required: true
           schema:

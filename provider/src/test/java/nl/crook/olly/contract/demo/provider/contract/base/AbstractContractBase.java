@@ -70,7 +70,7 @@ public abstract class AbstractContractBase {
         this.wireMockServer = new WireMockServer(WireMockSpring.options().port(0)); // random port
         this.wireMockServer.start();
 
-        // setup empty Mongo database
+        // setup Mongo database
         this.mongoTemplate.dropCollection("local");
         this.mongoTemplate.createCollection("local");
         setupDatabaseRecords();

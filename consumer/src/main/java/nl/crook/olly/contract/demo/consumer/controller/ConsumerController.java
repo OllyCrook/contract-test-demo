@@ -31,12 +31,14 @@ public class ConsumerController implements ConsumerApi {
         for(Product product: products.getProducts()) {
             ProductPrice productPrice = new ProductPrice();
             productPrice.setCode(product.getCategory());
-            productPrice.setId(product.getCode());
             productPrice.setName(product.getName());
             productPrice.setDescription(product.getDescription());
             productPrice.setPrice(product.getPrice());
             productPrices.addProductsItem(productPrice);
         }
+
+        final String description = promotionDetails.getDescription();
+        productPrices.setPromotionDetails(description);
 
         return new ResponseEntity<>(productPrices, HttpStatus.OK);
     }

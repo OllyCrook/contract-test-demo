@@ -32,7 +32,7 @@ import static org.springframework.cloud.contract.wiremock.WireMockSpring.options
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWireMock(port = 0)    // random port
-@ActiveProfiles("functional-tests")
+@ActiveProfiles("integration-tests")
 @DirtiesContext
 public class ContractBase {
 

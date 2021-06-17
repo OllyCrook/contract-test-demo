@@ -4,6 +4,8 @@ server:
 logging:
   level:
     root: info
+  pattern:
+    level: '%-5p [%X{test-case}] [%t] %C{2} - %m%n'
 
 spring:
   main:

@@ -1,5 +1,5 @@
 ### Test request for the provider service that is used by the consumer
-POST http://localhost:8080//provider/products/ICE
+POST http://localhost:8080/provider/products/ICE
 Accept: application/json
 x-b3-traceId: 1234567890123456
 

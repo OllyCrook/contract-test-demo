@@ -23,9 +23,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ * Change StubRunnerProperties.StubsMode to REMOTE if you want to use Nexus instead of your local Maven repo
+ */
 @Slf4j
 @ExtendWith(SpringExtension.class)
-@ActiveProfiles("contract-tests")
+@ActiveProfiles("api-tests")
 @SpringBootTest
 @DirtiesContext
 @AutoConfigureStubRunner(ids = {"nl.crook.olly.contract.demo.provider:provider:+:stubs:8091"},

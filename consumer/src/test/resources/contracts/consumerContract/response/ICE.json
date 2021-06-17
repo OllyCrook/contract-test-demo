@@ -2,10 +2,10 @@
     "products": [
         {
             "code": "ICE",
-            "id": "STRAWBERRY",
             "name": "Strawberry ice cream",
             "description": "The best strawberry ice cream in the world",
             "price": "1234"
         }
-    ]
+    ],
+    "promotionDetails": "Free vanilla drink every day until end of year if you buy more than 100 ice-creams today"
 }

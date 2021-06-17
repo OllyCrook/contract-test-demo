@@ -22,7 +22,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(FeignException.class)
     protected ResponseEntity<Object> handleFeignException(final FeignException e) {
-        log.error(e.getMessage() + " calling " + e.request().httpMethod() + " " + e.request().url().toString(), e);
+        log.error(e.getMessage() + " calling " + e.request().httpMethod() + " " + e.request().url().toString());
         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

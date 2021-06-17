@@ -1,8 +1,8 @@
-server.port: 8082
-
 logging:
   level:
-    root: INFO
+    root: info
+  pattern:
+    level: '%-5p [%X{test-case}] [%t] %C{2} - %m%n'
 
 spring:
   data:

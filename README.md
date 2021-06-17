@@ -1,7 +1,5 @@
 # Getting Started
 
-TODO - remember to describe LOCAL
-
 ## We will use the following to build the code
 - Maven
 - Java 11 (earler versions are also OK)
@@ -17,6 +15,35 @@ TODO - remember to describe LOCAL
 - Flapdoodle – for testing with an in-memory mongodb database
 - This demo does not use Kotlin
 
+
+## Lombok
+You may need to install a Lombok plugin to get this code working on your IDE  
+For more details see https://www.baeldung.com/intro-to-project-lombok
+
+## Sleuth
+The micro-services use the Sleuth dependency. This dependency adds and forwards traceIds (and other fields) in request message.  If you know the traceId, you can examine log files to see all relevant logs records.  You can also link your services to tools like ZipKin
+This enables requests to be easily traced through a micro-service environment
+
+For more details see: https://dzone.com/articles/monitoring-microservices-with-spring-cloud-sleuth
+
+## MongoDB non-SQL database
+The Provider service makes use of a non-SQL database  
+For more details, see: https://www.baeldung.com/spring-data-mongodb-tutorial
+
+## RestAssuredMockMvc
+See https://www.baeldung.com/spring-mock-mvc-rest-assured
+
+## WireMock
+See https://www.baeldung.com/introduction-to-wiremock
+
+## OpenAPi
+For more details about OpenApi, see https://www.baeldung.com/spring-rest-openapi-documentation
+
+## Intellij trick to run the generated Junit tests
+If you are using Intellij, you may need to mark the following directory as "Generated test sources" 
+  - /target/generated-test-sources/contracts
+
+
 ## The OpenApi YAML defintitions are used to generate a lot of boilerplate code
 The openApi yml files (product.yml, consiumer.yml and marketing.yml) are used to generate code that is used in the controllers and clients.
 
@@ -27,6 +54,7 @@ And then
 - _MarketingService_ uses the generated bean _MarketingApiClient_ to handle the REST calls to the legacyt marketing service
 
 Note the generated ApiClient code uses OpenFeign to process the REST calls
+
 
 ## Test directory structure
 The test directrory structure is extremely important.  
@@ -41,20 +69,20 @@ For example, in the provider service, we have the following (note in the Consume
 ### Base class names when using packageWithBaseClasses in the pom
 Because the pom specifes the package containing base classes, Spring Boot Contract will expect the following:
 - src/test/resources/contracts/**providerContract** -> expects to use **ProviderContractBase**.java
-- src/test/resources/contracts/**providerFunctional** -> expects to use **ProviderFunctionalBase**.java
+- src/test/resources/contracts/**providerIntegration** -> expects to use **providerIntegrationBase**.java
 
 These classes must be present in the package **nl.crook.olly.contract.demo.provider.contract.base** 
 
 
 ## Groovy files get compiled to Java classes, with the Java names based on the directory name by default
 For example, if you have
-- src/test/resources/contracts/**providerFunctional**/test1.groovy
-- src/test/resources/contracts/**providerFunctional**/test2.groovy
+- src/test/resources/contracts/**providerIntegration**/test1.groovy
+- src/test/resources/contracts/**providerIntegration**/test2.groovy
 
 Then mvn clean install will generate a test class based on te directory name
-- provider/target/generated-test-sources/contracts/nl/crook/olly/contract/demo/provider/contract/base/**ProviderFunctional**.java  
+- provider/target/generated-test-sources/contracts/nl/crook/olly/contract/demo/provider/contract/base/**providerIntegration**.java  
 
-And ProviderFunctional.java will contain the following 2 methods  
+And providerIntegration.java will contain the following 2 methods  
 - validate_test1()
 - validate_test2()
 
@@ -63,10 +91,10 @@ You can override the default naming by using the "name" attribute in your groovy
 For example, if test1.groovy contains  
     `"name": "groovy contract"`   
 
-Then ProviderFunctional.java will contain
+Then providerIntegration.java will contain
 - validate_GroovyContract()
 
-You can run and debug ProviderFunctional.java just like any Junit test.  
+You can run and debug providerIntegration.java just like any Junit test.  
 Note, you may have to mark the directory **provider/target/generated-test-sources/contracts** as **Test Sources Root** if using Intellij
 
 ## The OpenAPi definition in provider.yml
@@ -81,5 +109,4 @@ For example, in provider.yml, _getProducts_ and _getProductDetails_ both make us
 
 This means there is a risk that anyone looking at the openApi definition might (incorrectly) assume that _getProducts_ will return a list of _Product_, and that each item contains all the fields from _Product_.  
 However, _getProducts_ fills only some of the fields of the Product (for example, it does not fill the description)
-Ideally, we would not encounter this, but it is good to be aware of issues like thie, and maybe consider refactoring the definition
-
+Ideally, we would not encounter this, but it is good to be aware of issues like this, and maybe consider refactoring the definition

@@ -29,6 +29,7 @@ public class ProviderController implements ProviderApi {
 
     @Override
     public ResponseEntity<Products> getProducts(@Pattern(regexp = "^\\w{1,35}$") String productCategory, @Valid ConsumerDetails consumerDetails) {
+        log.info("Started getProducts");
         final Products products = productsService.getProducts(productCategory);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }

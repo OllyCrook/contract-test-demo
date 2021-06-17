@@ -16,7 +16,7 @@ public class MarketingService {
     private final MarketingApiClient marketingApiClient;
 
     @Cacheable(value = "getPromotionDetails")
-    public PromotionDetails getPromotionDetails(final String productCode) {
-        return this.marketingApiClient.getPromotionDetails(productCode).getBody();
+    public PromotionDetails getPromotionDetails(final String productCategory) {
+        return this.marketingApiClient.getPromotionDetails(productCategory).getBody();
     }
 }
