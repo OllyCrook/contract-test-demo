@@ -66,15 +66,13 @@ For example, in the provider service, we have the following (note in the Consume
         nl.crook.olly.contract.demo.provider.contract.base
       <packageWithBaseClasses>
 
-### Base class names when using packageWithBaseClasses in the pom
-Because the pom specifes the package containing base classes, Spring Boot Contract will expect the following:
+Because the pom specifed the package containing base classes, Spring Boot Contract will expect the following for each directory:
 - src/test/resources/contracts/**providerContract** -> expects to use **ProviderContractBase**.java
 - src/test/resources/contracts/**providerIntegration** -> expects to use **providerIntegrationBase**.java
 
 These classes must be present in the package **nl.crook.olly.contract.demo.provider.contract.base** 
 
-
-## Groovy files get compiled to Java classes, with the Java names based on the directory name by default
+### Groovy files get compiled to Java classes, with the Java names based on the directory name by default
 For example, if you have
 - src/test/resources/contracts/**providerIntegration**/test1.groovy
 - src/test/resources/contracts/**providerIntegration**/test2.groovy
