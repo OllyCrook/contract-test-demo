@@ -25,7 +25,7 @@ Contract.make {
             contentType(applicationJson())
         }
         // copy the category from the request path to the response
-        // https://cloud.spring.io/spring-cloud-contract/2.0.x/multi/multi__contract_dsl.html
+        // See https://cloud.spring.io/spring-cloud-contract/2.0.x/multi/multi__contract_dsl.html
         body(
                 products: [
                         category: fromRequest().path(2),  // ICOMONGO4

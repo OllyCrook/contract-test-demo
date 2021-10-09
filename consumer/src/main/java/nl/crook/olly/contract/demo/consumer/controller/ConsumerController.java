@@ -14,6 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Note: ConsumerApi is generated during the build from the OpenApi file"consumer.yml"
+ */
 @Slf4j
 @RestController
 @RequiredArgsConstructor

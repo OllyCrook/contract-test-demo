@@ -37,7 +37,7 @@ Contract.make {
 
         // user-defined rule for validating the response, where elementNotPresent is defined in AbstractContractBase
         bodyMatchers {
-            // description field should not be in the response
+            // description field should NOT be in the response
             jsonPath('$', byCommand('elementNotPresent($it, "description")'))
         }
     }

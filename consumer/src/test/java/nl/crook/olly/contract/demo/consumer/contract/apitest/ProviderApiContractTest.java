@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
+ * These tests will use the WireMock mappings files in provider-stubs.jar, which is retrieved from the maven repository (in Nexus or locally)
  * Change StubRunnerProperties.StubsMode to REMOTE if you want to use Nexus instead of your local Maven repo
  */
 @Slf4j

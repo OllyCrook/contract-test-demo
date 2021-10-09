@@ -26,7 +26,7 @@ Contract.make {
         }
 
         // Use value(consumer(..)) or value(producer(...)) to generate a random 2 digit price for the response to the consumer (see the mappings file in the stub.jar file)
-        // Also generate Junit code in ProviderCOntractTest that verifies that the price is 2 digits.  Useful for example if you want to generate current timestamp in the response
+        // Also generate Junit code in ProviderContractTest that verifies that the price is 2 digits.  Useful for example if you want to generate current timestamp in the response
         // https://cloud.spring.io/spring-cloud-contract/2.0.x/multi/multi__contract_dsl.html
         //
         body(

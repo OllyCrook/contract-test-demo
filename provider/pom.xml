@@ -116,6 +116,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -158,7 +159,8 @@
                             <generateSupportingFiles>false</generateSupportingFiles>
                             <configOptions>
                                 <basePackage>nl.crook.olly.contract.demo</basePackage>
-                                <configPackage>nl.crook.olly.contract.demo.provider.client.config.provider</configPackage>
+                                <configPackage>nl.crook.olly.contract.demo.provider.client.config.provider
+                                </configPackage>
                                 <library>spring-cloud</library>
                                 <dateLibrary>java8</dateLibrary>
                                 <java8>true</java8>
@@ -196,5 +198,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

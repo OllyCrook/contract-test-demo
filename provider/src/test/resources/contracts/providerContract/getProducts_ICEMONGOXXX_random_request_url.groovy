@@ -9,7 +9,7 @@ Contract.make {
 
     request {
         method POST()
-        // Accept a category of the form "ICEMONGO_[0-9]{3}" from the consumer (see mappiongs file in stub.jar)
+        // Accept a category of the form "ICEMONGO_[0-9]{3}" from the consumer (see mappings file in provider-stubs.jar)
         // and generate a Junit test using a random url. For exmaple /provider/products/ICEMONGO_243
         url value(consumer(regex('/provider/products/ICEMONGO_[0-9]{3}')))
 
