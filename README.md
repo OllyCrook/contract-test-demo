@@ -15,7 +15,6 @@
 - Flapdoodle – for testing with an in-memory mongodb database
 - This demo does not use Kotlin
 
-
 ## Lombok
 You may need to install a Lombok plugin to get this code working on your IDE  
 For more details see https://www.baeldung.com/intro-to-project-lombok
@@ -39,12 +38,15 @@ See https://www.baeldung.com/introduction-to-wiremock
 ## OpenAPi
 For more details about OpenApi, see https://www.baeldung.com/spring-rest-openapi-documentation
 
+Note: I deliberately used overly-complex API definitions in my openAPi definiton, just for experimental purposes.  I know it can be tidied up :)
+
+
 ## Intellij trick to run the generated Junit tests
 If you are using Intellij, you may need to mark the following directory as "Generated test sources" 
   - /target/generated-test-sources/contracts
 
 
-## The OpenApi YAML defintitions are used to generate a lot of boilerplate code
+## The OpenApi YAML definitions are used to generate a lot of boilerplate code
 The openApi yml files (product.yml, consiumer.yml and marketing.yml) are used to generate code that is used in the controllers and clients.
 
 For example, in the Consumer service, mvn clean install will generate code in target/generated-sources/openapi/src/main
